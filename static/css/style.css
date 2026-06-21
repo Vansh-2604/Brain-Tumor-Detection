@@ -1,0 +1,104 @@
+html{
+    height: 100%;
+}
+body{
+    
+    background: linear-gradient(
+        135deg,
+        #e8f1ff,
+        #f7fbff
+    );
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    font-family:"Segoe UI",sans-serif;
+    margin: 0;
+}
+
+.container{
+    flex: 1;
+}
+
+footer{
+    width:100%;
+    background:#f8f9fa;
+    text-align:center;
+    padding:10px;
+    margin-top:20px;
+}
+
+.hero-card{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+h1{
+    color:#0d6efd;
+    font-weight:700;
+}
+
+.subtitle{
+    color:#666;
+}
+
+.dashboard-card{
+    background:white;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    height:100%;
+}
+
+.prediction-title{
+    color:#864dbf;
+    font-weight:700;
+    margin-top:15px;
+}
+
+.progress{
+    border-radius:20px;
+}
+
+.progress-bar{
+    font-weight:600;
+}
+
+.status-card{
+    background:#f8f9fa;
+    padding:15px;
+    border-radius:15px;
+}
+
+img{
+    border-radius:15px;
+}
+
+.btn-primary{
+    border-radius:12px;
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+.confidence-container{
+    width:100%;
+    background:#dfe3e8;
+    border-radius:25px;
+    overflow:hidden;
+    height:35px;
+}
+
+.confidence-bar{
+    height:100%;
+    background:#0d6efd;
+    color:white;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:width 0.8s ease;
+}
+
