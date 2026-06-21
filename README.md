@@ -133,6 +133,13 @@ http://127.0.0.1:5000
 
 ---
 
+## SCREENSHOT
+
+![image alt](https://github.com/Vansh-2604/Brain-Tumor-Detection/blob/3ddd8b8987bba1004f0525fb6fecd7826d301534/ss1.jpg)
+![image alt](https://github.com/Vansh-2604/Brain-Tumor-Detection/blob/3ddd8b8987bba1004f0525fb6fecd7826d301534/ss2.jpg)
+![image alt](https://github.com/Vansh-2604/Brain-Tumor-Detection/blob/3ddd8b8987bba1004f0525fb6fecd7826d301534/ss3.jpg)
+![image alt](https://github.com/Vansh-2604/Brain-Tumor-Detection/blob/3ddd8b8987bba1004f0525fb6fecd7826d301534/ss4.jpg)
+
 
 
 ## Author
