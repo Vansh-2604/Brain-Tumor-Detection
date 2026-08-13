@@ -28,6 +28,7 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    print("Predict Route started", flush=True)
 
     file = request.files["image"]
 
@@ -37,6 +38,7 @@ def predict():
     )
 
     file.save(filepath)
+    print("ABOUT TO CALL MODEL", flush=True)
 
     prediction, confidence = predict_image(
         filepath
