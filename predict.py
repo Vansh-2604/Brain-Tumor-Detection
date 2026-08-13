@@ -50,8 +50,9 @@ transform = transforms.Compose([
 
 
 def predict_image(image_path):
+    print("ENTERED predict_image", flush=True)
     start = time.time()
-    print("START PREDICTION")
+    print("START PREDICTION", flush=True)
 
     image = Image.open(image_path).convert("RGB")
     print("Image opened:", time.time() - start)
