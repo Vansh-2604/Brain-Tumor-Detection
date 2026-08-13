@@ -2,6 +2,9 @@ import torch
 import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
+import time
+
+print("PREDICT.PY IMPORTED", flush=True)
 
 device = torch.device("cpu")
 
@@ -30,8 +33,10 @@ model.load_state_dict(
         map_location=device
     )
 )
+print("MODEL WEIGHTS LOADED", flush=True)
 
 model.eval()
+print("MODEL READY", flush=True)
 
 # Same transform used during testing
 transform = transforms.Compose([
@@ -43,7 +48,6 @@ transform = transforms.Compose([
     )
 ])
 
-import time
 
 def predict_image(image_path):
     start = time.time()
