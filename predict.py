@@ -43,17 +43,25 @@ transform = transforms.Compose([
     )
 ])
 
+import time
+
 def predict_image(image_path):
+    start = time.time()
+    print("START PREDICTION")
 
     image = Image.open(image_path).convert("RGB")
+    print("Image opened:", time.time() - start)
 
     image = transform(image)
+    print("Transform done:", time.time() - start)
 
     image = image.unsqueeze(0)
 
     with torch.no_grad():
 
         outputs = model(image)
+
+        print("Model inference done:", time.time() - start) 
 
         probabilities = torch.softmax(
             outputs,
@@ -64,6 +72,7 @@ def predict_image(image_path):
             probabilities,
             1
         )
+        print("Prediction finished:", time.time() - start)
 
     return (
         classes[predicted.item()],
