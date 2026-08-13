@@ -3,6 +3,7 @@ import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
 import time
+import os
 
 print("PREDICT.PY IMPORTED", flush=True)
 
@@ -50,15 +51,22 @@ transform = transforms.Compose([
 
 
 def predict_image(image_path):
-    print("ENTERED predict_image", flush=True)
+    
     start = time.time()
-    print("START PREDICTION", flush=True)
+    print("ENTERED predict_image", flush=True)
+    print("Image path:", image_path, flush=True)
+
+    print("File exists:", os.path.exists(image_path), flush=True)
+    if os.path.exists(image_path):
+        print("File size:", os.path.getsize(image_path), "bytes", flush=True)
+
+    print("BEFORE PIL OPEN", flush=True)
 
     image = Image.open(image_path).convert("RGB")
-    print("Image opened:", time.time() - start)
+    print("RGB CONVERSION SUCCESS", flush=True)
 
     image = transform(image)
-    print("Transform done:", time.time() - start)
+    print("Transform done:", time.time() - start, flush=True)
 
     image = image.unsqueeze(0)
 
@@ -66,7 +74,7 @@ def predict_image(image_path):
 
         outputs = model(image)
 
-        print("Model inference done:", time.time() - start) 
+        print("Model inference done:", time.time() - start, flush=True) 
 
         probabilities = torch.softmax(
             outputs,
@@ -77,7 +85,7 @@ def predict_image(image_path):
             probabilities,
             1
         )
-        print("Prediction finished:", time.time() - start)
+        print("Prediction finished:", time.time() - start, flush=True)
 
     return (
         classes[predicted.item()],
